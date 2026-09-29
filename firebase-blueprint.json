@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with personal and business info, managed by client and backend.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "business_name": { "type": "string" },
+        "business_category": { "type": "string" },
+        "business_description": { "type": "string" },
+        "target_audience": { "type": "string" },
+        "products_services": { "type": "string" },
+        "profile_image": { "type": "string" },
+        "is_pro": { "type": "boolean" },
+        "isPro": { "type": "boolean" },
+        "proActivatedAt": { "type": "number" },
+        "pro_since": { "type": "string" },
+        "subscription": { "type": "object" },
+        "paystack": { "type": "object" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "created_at"]
+    },
+    "PaymentRecord": {
+      "title": "PaymentRecord",
+      "description": "Verified Paystack payment record stored by backend.",
+      "type": "object",
+      "properties": {
+        "reference": { "type": "string" },
+        "userId": { "type": "string" },
+        "amount": { "type": "number" },
+        "currency": { "type": "string" },
+        "channel": { "type": "string" },
+        "status": { "type": "string" },
+        "paid_at": { "type": "string" },
+        "fulfilled_at": { "type": "string" }
+      },
+      "required": ["reference", "userId", "amount", "currency", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile. Entitlement fields is_pro and subscription are strictly protected from client tampering."
+    },
+    "/users/{userId}/logos/{logoId}": {
+      "schema": "GeneratedLogo",
+      "description": "User created and saved logo designs."
+    },
+    "/users/{userId}/advertisements/{adId}": {
+      "schema": "GeneratedAdvertisement",
+      "description": "User created advertisement campaigns and flyers."
+    },
+    "/users/{userId}/projects/{projectId}": {
+      "schema": "ProjectItem",
+      "description": "Saved business documents, strategies, and growth projects."
+    },
+    "/payments/{paymentId}": {
+      "schema": "PaymentRecord",
+      "description": "Server-verified Paystack payment records to prevent duplicate fulfillment."
+    }
+  }
+}

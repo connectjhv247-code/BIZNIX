@@ -1,0 +1,6 @@
+{
+  "name": "BIZNIX",
+  "description": "Your AI Business Partner — All-in-one AI platform for brand creation, logo design, AI assistant, advertising studio, and business growth tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

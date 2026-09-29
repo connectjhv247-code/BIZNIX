@@ -1,0 +1,355 @@
+{
+  "users": [
+    {
+      "id": "user_default_1",
+      "name": "Alex Morgan",
+      "email": "alex@biznix.app",
+      "phone": "+1 (555) 234-5678",
+      "business_name": "Apex Studios",
+      "business_category": "Creative Design & Tech",
+      "business_description": "An elite brand identity and digital innovation studio delivering high-conversion marketing.",
+      "target_audience": "Entrepreneurs, small business founders, and modern creators.",
+      "products_services": "Brand Identity Kits, AI Promotional Campaigns, and Marketing Roadmaps.",
+      "profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "is_pro": true,
+      "created_at": "2026-09-29T12:09:17.257Z",
+      "subscription": {
+        "plan_id": "PLN_lt9i01y8njw0316",
+        "status": "active",
+        "is_pro": true,
+        "isPro": true,
+        "provider": "paystack",
+        "order_id": "trx_bridge_test_456",
+        "paystack_reference": "trx_bridge_test_456",
+        "amount": 500000,
+        "currency": "NGN",
+        "channel": "card",
+        "started_at": "2026-09-29T12:16:30.827Z",
+        "expires_at": "2026-10-30T12:16:30.830Z",
+        "auto_renew": true
+      },
+      "isPro": true,
+      "proActivatedAt": 1790684190830,
+      "pro_since": "2026-09-29T12:16:30.830Z"
+    }
+  ],
+  "logos": [
+    {
+      "id": "logo_seed_1",
+      "user_id": "user_default_1",
+      "business_name": "Apex Studios",
+      "slogan": "Crafting the Future of Digital Brands",
+      "category": "Technology",
+      "style": "Modern",
+      "colors": [
+        "#3b82f6",
+        "#1e293b",
+        "#06b6d4"
+      ],
+      "svg_code": "<svg viewBox=\"0 0 300 300\" xmlns=\"http://www.w3.org/2000/svg\">\n      <defs>\n        <linearGradient id=\"grad1\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n          <stop offset=\"0%\" stop-color=\"#3b82f6\" />\n          <stop offset=\"100%\" stop-color=\"#06b6d4\" />\n        </linearGradient>\n      </defs>\n      <rect width=\"100%\" height=\"100%\" rx=\"32\" fill=\"#0f172a\"/>\n      <g transform=\"translate(150, 120)\">\n        <polygon points=\"0,-60 52,30 -52,30\" fill=\"none\" stroke=\"url(#grad1)\" stroke-width=\"12\" stroke-linejoin=\"round\"/>\n        <circle cx=\"0\" cy=\"0\" r=\"16\" fill=\"#38bdf8\"/>\n        <path d=\"M-26,0 L26,0\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n      </g>\n      <text x=\"150\" y=\"210\" font-family=\"'Space Grotesk', sans-serif\" font-size=\"22\" font-weight=\"700\" fill=\"#ffffff\" text-anchor=\"middle\" letter-spacing=\"3\">APEX STUDIOS</text>\n      <text x=\"150\" y=\"235\" font-family=\"'Plus Jakarta Sans', sans-serif\" font-size=\"10\" font-weight=\"500\" fill=\"#94a3b8\" text-anchor=\"middle\" letter-spacing=\"1.5\">DIGITAL INNOVATION</text>\n    </svg>",
+      "description": "Minimalist geometric apex triangle icon with tech cyan & indigo gradient.",
+      "created_at": "2026-09-27T12:09:17.257Z",
+      "is_favorite": true
+    },
+    {
+      "id": "logo_seed_2",
+      "user_id": "user_default_1",
+      "business_name": "Luxe Aura",
+      "slogan": "Timeless Elegance in Every Thread",
+      "category": "Fashion",
+      "style": "Luxury",
+      "colors": [
+        "#d97706",
+        "#18181b",
+        "#fef3c7"
+      ],
+      "svg_code": "<svg viewBox=\"0 0 300 300\" xmlns=\"http://www.w3.org/2000/svg\">\n      <defs>\n        <linearGradient id=\"goldGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n          <stop offset=\"0%\" stop-color=\"#fbbf24\" />\n          <stop offset=\"50%\" stop-color=\"#d97706\" />\n          <stop offset=\"100%\" stop-color=\"#b45309\" />\n        </linearGradient>\n      </defs>\n      <rect width=\"100%\" height=\"100%\" rx=\"32\" fill=\"#18181b\"/>\n      <g transform=\"translate(150, 115)\">\n        <circle cx=\"0\" cy=\"0\" r=\"48\" fill=\"none\" stroke=\"url(#goldGrad)\" stroke-width=\"2\" stroke-dasharray=\"4 2\"/>\n        <path d=\"M-25,-30 L0,30 L25,-30 M-18,-6 L18,-6\" fill=\"none\" stroke=\"url(#goldGrad)\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        <polygon points=\"0,-42 4,-34 -4,-34\" fill=\"#fbbf24\"/>\n      </g>\n      <text x=\"150\" y=\"208\" font-family=\"'Space Grotesk', serif\" font-size=\"20\" font-weight=\"600\" fill=\"#fef3c7\" text-anchor=\"middle\" letter-spacing=\"4\">LUXE AURA</text>\n      <text x=\"150\" y=\"232\" font-family=\"'Plus Jakarta Sans', sans-serif\" font-size=\"9\" font-weight=\"400\" fill=\"#d97706\" text-anchor=\"middle\" letter-spacing=\"3\">HAUTE COUTURE</text>\n    </svg>",
+      "description": "Gold monogram with luxury circular border and refined typography.",
+      "created_at": "2026-09-28T12:09:17.257Z",
+      "is_favorite": true
+    }
+  ],
+  "advertisements": [],
+  "projects": [
+    {
+      "id": "proj_seed_1",
+      "user_id": "user_default_1",
+      "project_type": "logo",
+      "title": "Apex Studios Master Brandmark",
+      "content": "{\"id\":\"logo_seed_1\",\"user_id\":\"user_default_1\",\"business_name\":\"Apex Studios\",\"slogan\":\"Crafting the Future of Digital Brands\",\"category\":\"Technology\",\"style\":\"Modern\",\"colors\":[\"#3b82f6\",\"#1e293b\",\"#06b6d4\"],\"svg_code\":\"<svg viewBox=\\\"0 0 300 300\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\">\\n      <defs>\\n        <linearGradient id=\\\"grad1\\\" x1=\\\"0%\\\" y1=\\\"0%\\\" x2=\\\"100%\\\" y2=\\\"100%\\\">\\n          <stop offset=\\\"0%\\\" stop-color=\\\"#3b82f6\\\" />\\n          <stop offset=\\\"100%\\\" stop-color=\\\"#06b6d4\\\" />\\n        </linearGradient>\\n      </defs>\\n      <rect width=\\\"100%\\\" height=\\\"100%\\\" rx=\\\"32\\\" fill=\\\"#0f172a\\\"/>\\n      <g transform=\\\"translate(150, 120)\\\">\\n        <polygon points=\\\"0,-60 52,30 -52,30\\\" fill=\\\"none\\\" stroke=\\\"url(#grad1)\\\" stroke-width=\\\"12\\\" stroke-linejoin=\\\"round\\\"/>\\n        <circle cx=\\\"0\\\" cy=\\\"0\\\" r=\\\"16\\\" fill=\\\"#38bdf8\\\"/>\\n        <path d=\\\"M-26,0 L26,0\\\" stroke=\\\"#ffffff\\\" stroke-width=\\\"4\\\" stroke-linecap=\\\"round\\\"/>\\n      </g>\\n      <text x=\\\"150\\\" y=\\\"210\\\" font-family=\\\"'Space Grotesk', sans-serif\\\" font-size=\\\"22\\\" font-weight=\\\"700\\\" fill=\\\"#ffffff\\\" text-anchor=\\\"middle\\\" letter-spacing=\\\"3\\\">APEX STUDIOS</text>\\n      <text x=\\\"150\\\" y=\\\"235\\\" font-family=\\\"'Plus Jakarta Sans', sans-serif\\\" font-size=\\\"10\\\" font-weight=\\\"500\\\" fill=\\\"#94a3b8\\\" text-anchor=\\\"middle\\\" letter-spacing=\\\"1.5\\\">DIGITAL INNOVATION</text>\\n    </svg>\",\"description\":\"Minimalist geometric apex triangle icon with tech cyan & indigo gradient.\",\"created_at\":\"2026-09-27T12:09:17.257Z\",\"is_favorite\":true}",
+      "created_at": "2026-09-27T12:09:17.257Z",
+      "updated_at": "2026-09-27T12:09:17.257Z"
+    },
+    {
+      "id": "proj_seed_2",
+      "user_id": "user_default_1",
+      "project_type": "advertisement",
+      "title": "Summer Launch Special Promo",
+      "content": "{\"type\":\"Special Offer\",\"headline\":\"Transform Your Business Presence with AI\",\"body\":\"Get 40% off custom brand identity and marketing kits this week only. Limited spots available!\",\"cta\":\"Claim Your Brand Kit Today\",\"hashtags\":[\"#BusinessGrowth\",\"#BrandStrategy\",\"#BIZNIX\",\"#StartupLife\"]}",
+      "created_at": "2026-09-29T00:09:17.257Z",
+      "updated_at": "2026-09-29T00:09:17.257Z"
+    },
+    {
+      "id": "proj_seed_3",
+      "user_id": "user_default_1",
+      "project_type": "growth_doc",
+      "title": "Q3 Omni-Channel Marketing Plan",
+      "content": "{\"title\":\"Apex Studios Q3 Marketing Blueprint\",\"summary\":\"Aggressive 90-day organic growth roadmap focusing on short-form video, WhatsApp direct community, and high-converting referral incentives.\"}",
+      "created_at": "2026-09-29T08:09:17.257Z",
+      "updated_at": "2026-09-29T08:09:17.257Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv_default",
+      "user_id": "user_default_1",
+      "title": "Business Launch Advisory",
+      "created_at": "2026-09-29T06:09:17.258Z",
+      "updated_at": "2026-09-29T12:09:17.258Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_1",
+      "conversation_id": "conv_default",
+      "role": "model",
+      "message": "Hello! I am BIZNIX AI, your dedicated AI business partner. How can I assist you with your business strategy, brand naming, marketing campaigns, or growth plans today?",
+      "created_at": "2026-09-29T06:09:17.258Z"
+    }
+  ],
+  "daily_ads": [
+    {
+      "user_id": "user_default_1",
+      "date": "2026-09-29",
+      "ad": {
+        "id": "daily_ad_2026-09-29_1790683897016",
+        "user_id": "user_default_1",
+        "type": "Promotional Advertisement",
+        "platform": "Instagram",
+        "title": "Apex Studios Tuesday Transformation",
+        "headline": "Stop Guessing, Start Scaling: Elevate Your Brand Today",
+        "body_text": "Is your brand identity keeping up with your ambition? At Apex Studios, we specialize in high-conversion marketing roadmaps and AI-driven campaigns tailored for the modern founder. This Tuesday, we are opening spots for new clients ready to dominate their niche. Don't let a generic image hold your business back; let's build an elite presence that drives results.",
+        "call_to_action": "Click the link in bio or call +1 (555) 234-5678 to book your free brand audit today!",
+        "hashtags": [
+          "#ApexStudios",
+          "#BrandIdentity",
+          "#DigitalMarketing",
+          "#FounderGrowth",
+          "#AIInnovation",
+          "#CreativeTech"
+        ],
+        "special_offer": "15% off first month of AI campaign management",
+        "price": "$499",
+        "contact_info": "+1 (555) 234-5678",
+        "style": "Modern, Elite, Minimalist",
+        "flyer_layout": {
+          "themeColor": "Obsidian Black",
+          "accentColor": "Electric Neon Blue",
+          "backgroundColor": "Matte Charcoal",
+          "headline": "Dominate Your Market",
+          "subheadline": "Expert Design & AI Strategy for Elite Founders",
+          "bulletPoints": [
+            "Full Brand Identity Kits",
+            "Automated AI Ad Campaigns",
+            "Custom Marketing Roadmaps",
+            "Priority Strategy Sessions"
+          ],
+          "badgeText": "Limited Spots Available",
+          "contactLine": "+1 (555) 234-5678",
+          "footerText": "Apex Studios | Redefining Digital Innovation",
+          "priceTag": "Starting at $499"
+        },
+        "created_at": "2026-09-29T12:11:37.016Z"
+      },
+      "generated_at": "2026-09-29T12:11:37.016Z",
+      "status": "fresh"
+    },
+    {
+      "user_id": "7lvNcJOWFTMAutOfZVqy8CeRArH2",
+      "date": "2026-09-29",
+      "ad": {
+        "id": "daily_ad_2026-09-29_1790683796348",
+        "user_id": "7lvNcJOWFTMAutOfZVqy8CeRArH2",
+        "type": "Digital Advertisement",
+        "platform": "Instagram",
+        "title": "Apex Studios Tuesday Transformation",
+        "headline": "Stop Guessing. Start Dominating with Apex Studios.",
+        "body_text": "Is your brand getting lost in the noise? This Tuesday, it is time to pivot from generic to elite. Apex Studios specializes in high-conversion brand identity kits, cutting-edge AI promotional campaigns, and custom marketing roadmaps designed to scale your business. Don't let another week pass with mediocre results—partner with the digital innovation experts and claim your market share today.",
+        "call_to_action": "Call +1 (555) 234-5678 or visit our studio to book your strategy session.",
+        "hashtags": [
+          "#ApexStudios",
+          "#BrandIdentity",
+          "#MarketingRoadmap",
+          "#DigitalInnovation",
+          "#EntrepreneurLife",
+          "#GrowthHacking"
+        ],
+        "special_offer": "10% off your first Brand Identity Kit booked this Tuesday.",
+        "price": "Starting at $499",
+        "contact_info": "+1 (555) 234-5678",
+        "style": "Professional, Sleek, Modern",
+        "flyer_layout": {
+          "themeColor": "Obsidian Black",
+          "accentColor": "Electric Cyan",
+          "backgroundColor": "Matte White",
+          "headline": "Scale Your Vision.",
+          "subheadline": "Elite Design & AI-Driven Growth for Modern Founders.",
+          "bulletPoints": [
+            "Full Brand Identity Kits",
+            "Custom AI Marketing Campaigns",
+            "Strategic Growth Roadmaps"
+          ],
+          "badgeText": "Limited Spots Available",
+          "contactLine": "+1 (555) 234-5678",
+          "footerText": "Transform your brand. Secure your future.",
+          "priceTag": "Starting at $499"
+        },
+        "created_at": "2026-09-29T12:09:56.348Z"
+      },
+      "generated_at": "2026-09-29T12:09:56.348Z",
+      "status": "fresh"
+    },
+    {
+      "user_id": "user_test_uid",
+      "date": "2026-09-29",
+      "ad": {
+        "id": "daily_ad_2026-09-29_1790683769210",
+        "user_id": "user_test_uid",
+        "type": "Digital Advertisement",
+        "platform": "Instagram",
+        "title": "Tuesday Transformation: Elevate Your Brand with Apex Studios",
+        "headline": "Stop Guessing, Start Growing: Transform Your Brand Identity Today!",
+        "body_text": "Is your brand identity lagging behind your ambition? At Apex Studios, we don't just design logos; we craft complete brand ecosystems. This Tuesday, we are opening spots for entrepreneurs ready to dominate their niche with our AI-powered promotional campaigns and data-driven marketing roadmaps. Whether you are a solo founder or a scaling startup, our elite design and tech stack ensures you capture attention and convert prospects into loyal customers.",
+        "call_to_action": "Book your 15-minute Discovery Call at +1 (555) 234-5678 and secure your launch strategy.",
+        "hashtags": [
+          "#ApexStudios",
+          "#BrandIdentity",
+          "#MarketingStrategy",
+          "#EntrepreneurLife",
+          "#CreativeTech"
+        ],
+        "special_offer": "15% off for all new bookings made this Tuesday.",
+        "price": "$1,499",
+        "contact_info": "+1 (555) 234-5678",
+        "style": "Modern, Sleek, and Professional",
+        "flyer_layout": {
+          "themeColor": "#1A1A1A",
+          "accentColor": "#00FFC2",
+          "backgroundColor": "#FFFFFF",
+          "headline": "Re-Invent Your Brand",
+          "subheadline": "The Ultimate Creative & Tech Upgrade for Modern Founders",
+          "bulletPoints": [
+            "Full Brand Identity Kits",
+            "AI-Driven Campaign Strategy",
+            "Custom Growth Roadmaps",
+            "High-Conversion Design"
+          ],
+          "badgeText": "Limited Spots Available",
+          "contactLine": "+1 (555) 234-5678",
+          "footerText": "Apex Studios | Where Vision Meets Velocity",
+          "priceTag": "Starting at $1,499"
+        },
+        "created_at": "2026-09-29T12:09:29.210Z"
+      },
+      "generated_at": "2026-09-29T12:09:29.210Z",
+      "status": "fresh"
+    },
+    {
+      "user_id": "user_test_uid",
+      "date": "2026-09-29",
+      "ad": {
+        "id": "daily_ad_2026-09-29_1790683768672",
+        "user_id": "user_test_uid",
+        "type": "Promotional Advertisement",
+        "platform": "Instagram",
+        "title": "Apex Studios Tuesday Transformation",
+        "headline": "Stop Guessing, Start Scaling: Elevate Your Brand Today",
+        "body_text": "Is your brand identity keeping up with your ambition? At Apex Studios, we turn visions into high-conversion digital realities. Whether you need a premium Brand Identity Kit, an AI-powered campaign, or a comprehensive marketing roadmap, we are here to help you dominate your niche. Let's make this Tuesday the start of your most profitable quarter yet.",
+        "call_to_action": "Book your strategy session at +1 (555) 234-5678 and claim your free audit.",
+        "hashtags": [
+          "#ApexStudios",
+          "#BrandIdentity",
+          "#CreativeTech",
+          "#MarketingStrategy",
+          "#EntrepreneurLife"
+        ],
+        "special_offer": "Free digital marketing audit for all Tuesday consultations.",
+        "price": "Starting at $499",
+        "contact_info": "+1 (555) 234-5678",
+        "style": "Modern, Sleek, Professional",
+        "flyer_layout": {
+          "themeColor": "Deep Obsidian",
+          "accentColor": "Electric Blue",
+          "backgroundColor": "Matte Slate",
+          "headline": "Build Your Legacy with Apex Studios",
+          "subheadline": "Precision design meets AI-driven performance.",
+          "bulletPoints": [
+            "Full Brand Identity Kits",
+            "Automated AI Campaign Management",
+            "Tailored Marketing Roadmaps",
+            "Dedicated Creative Strategy"
+          ],
+          "badgeText": "Limited Spots Available",
+          "contactLine": "+1 (555) 234-5678",
+          "footerText": "Transforming small businesses into market leaders.",
+          "priceTag": "Starting at $499"
+        },
+        "created_at": "2026-09-29T12:09:28.672Z"
+      },
+      "generated_at": "2026-09-29T12:09:28.672Z",
+      "status": "fresh"
+    }
+  ],
+  "daily_growth_recs": [
+    {
+      "user_id": "user_default_1",
+      "date": "2026-09-29",
+      "title": "AI-Driven Portfolio Velocity Surge",
+      "recommendation": "Integrate a 'Before-and-After' showcase of a recent AI-enhanced marketing campaign directly onto your landing page to demonstrate tangible ROI. This provides social proof of your technical edge, directly converting high-intent leads who are skeptical about AI effectiveness.",
+      "category": "Conversion Optimization",
+      "actionable_step": "Select your best AI promotional campaign case study and write a 150-word performance breakdown to embed as a featured 'Growth Proof' section on your homepage.",
+      "generated_at": "2026-09-29T12:11:56.108Z",
+      "status": "active"
+    },
+    {
+      "user_id": "7lvNcJOWFTMAutOfZVqy8CeRArH2",
+      "date": "2026-09-29",
+      "title": "Micro-Audit Video Pitch Strategy",
+      "recommendation": "Offer a complimentary 60-second creative audit to prospective high-ticket clients to demonstrate instant value. Showcasing visual gaps alongside a mock AI promotional concept rapidly builds authority and accelerates sign-ups for full Brand Identity Kits.",
+      "category": "Sales Funnel",
+      "actionable_step": "Select 3 high-value prospects, record a rapid 60-second video audit pointing out one branding bottleneck, and send it directly with a link to book a strategy call.",
+      "generated_at": "2026-09-29T12:10:01.266Z",
+      "status": "active"
+    },
+    {
+      "user_id": "user_test_uid",
+      "date": "2026-09-29",
+      "title": "The 'AI-ROI' Case Study Bridge",
+      "recommendation": "Identify your most successful recent AI promotional campaign and transform it into a quick, data-backed 'before-and-after' micro-case study. By proving the tangible growth results your AI tools delivered, you move from selling creative services to selling proven business outcomes, significantly shortening your sales cycle.",
+      "category": "Conversion Optimization",
+      "actionable_step": "Draft a 150-word LinkedIn post highlighting one client's specific revenue increase using your AI-driven promotional strategy and pin it to your profile as a trust-building asset.",
+      "generated_at": "2026-09-29T12:09:38.153Z",
+      "status": "active"
+    },
+    {
+      "user_id": "user_test_uid",
+      "date": "2026-09-29",
+      "title": "AI-Driven Case Study Spotlight",
+      "recommendation": "Transform your existing AI promotional campaign results into a high-authority 'before-and-after' video case study to demonstrate measurable ROI. By showcasing concrete performance data alongside your aesthetic brand identity work, you validate your premium pricing and attract high-ticket clients who prioritize revenue growth over simple design.",
+      "category": "Conversion Optimization",
+      "actionable_step": "Select one past successful AI campaign, pull two key performance metrics (like CTR or conversion rate improvement), and record a 60-second screen-share walkthrough explaining how your design choices directly influenced these results.",
+      "generated_at": "2026-09-29T12:09:29.980Z",
+      "status": "active"
+    }
+  ],
+  "usage": [
+    {
+      "userId": "7lvNcJOWFTMAutOfZVqy8CeRArH2",
+      "date": "2026-09-29",
+      "month": "2026-09",
+      "logoGenerations": 0,
+      "chatMessages": 0,
+      "adGenerations": 0
+    }
+  ]
+}

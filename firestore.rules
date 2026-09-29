@@ -1,0 +1,61 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // User Profile Document
+    // Path: users/{userId}
+    match /users/{userId} {
+      allow read, update: if isOwner(userId);
+      allow create: if isOwner(userId);
+      allow delete: if false;
+
+      // User's private subcollections (Logos, Advertisements, Projects, Conversations)
+      match /logos/{logoId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /advertisements/{adId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /projects/{projectId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /conversations/{conversationId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Paystack Payments Collection
+    // Written only by Server via Firebase Admin SDK
+    // Client has read-only access to their own payment records
+    match /payments/{paymentId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow write: if false;
+    }
+
+    // Default deny all other documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

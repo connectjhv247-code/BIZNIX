@@ -1,0 +1,12 @@
+{
+  "name": "BIZNIX",
+  "displayName": "BIZNIX",
+  "scheme": "biznix",
+  "expo": {
+    "name": "BIZNIX",
+    "slug": "biznix",
+    "scheme": "biznix",
+    "version": "1.0.0",
+    "orientation": "portrait"
+  }
+}
