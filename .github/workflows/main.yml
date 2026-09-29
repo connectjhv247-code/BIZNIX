@@ -14,7 +14,9 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: |
+            17
+            21
 
       - uses: actions/setup-node@v4
         with:
@@ -23,17 +25,30 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Install Capacitor Android
+        run: |
+          if [ -d node_modules/@capacitor/core ]; then
+            V=$(node -p "require('./node_modules/@capacitor/core/package.json').version")
+            npm install --no-save --legacy-peer-deps @capacitor/android@$V
+          else
+            npm install --no-save --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
+          fi
+
       - name: Build web app
         run: npm run build
 
       - name: Sync Capacitor Android
-        run: |
-          npx cap add android || true
-          npx cap sync android
+        run: npx cap sync android
 
       - name: Build APK
         working-directory: android
         run: |
+          MAJOR=$(node -p "require('../node_modules/@capacitor/core/package.json').version.split('.')[0]")
+          if [ "$MAJOR" -ge 7 ]; then
+            export JAVA_HOME=$JAVA_HOME_21_X64
+          else
+            export JAVA_HOME=$JAVA_HOME_17_X64
+          fi
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
 
