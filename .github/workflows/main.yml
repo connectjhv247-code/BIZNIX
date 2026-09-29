@@ -1,5 +1,10 @@
 name: Build BIZNIX APK
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,24 +12,32 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install deps
-        run: npm install --legacy-peer-deps
-      - name: Build web
+
+      - name: Install dependencies
         run: |
-          npm run build || npm run build:web || npx vite build || echo "build done"
-          ls -la
-          ls -la dist || ls -la build || ls -la public || true
+          npm install --legacy-peer-deps || npm install --force
+
+      - name: Build web app
+        run: |
+          npm run build
+          ls dist
+
+      - name: Sync Capacitor Android
+        run: |
+          npx cap copy android
+          npx cap sync android || true
+
       - name: Build APK
+        working-directory: android
         run: |
-          npx cap copy android || true
-          cd android
           chmod +x gradlew
-         ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug --stacktrace
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
