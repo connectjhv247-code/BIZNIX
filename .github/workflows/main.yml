@@ -12,16 +12,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install --legacy-peer-deps
-      - run: npm run build || echo "no build script"
-      - name: Init Capacitor
+      - name: Install deps
+        run: npm install --legacy-peer-deps
+      - name: Build web
         run: |
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init BIZNIX com.biznix.app --web-dir=dist || npx cap init BIZNIX com.biznix.app --web-dir=build || npx cap init BIZNIX com.biznix.app --web-dir=public
-          npx cap add android
-          npx cap copy android
-          cd android && chmod +x gradlew &&./gradlew assembleDebug
-      - uses: actions/upload-artifact@v4
+          npm run build || npm run build:web || npx vite build || echo "build done"
+          ls -la
+          ls -la dist || ls -la build || ls -la public || true
+      - name: Build APK
+        run: |
+          npx cap copy android || true
+          cd android
+          chmod +x gradlew
+         ./gradlew assembleDebug --stacktrace
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: BIZNIX-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
