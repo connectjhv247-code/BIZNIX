@@ -37,12 +37,10 @@ jobs:
 
       - name: Build web app
         run: npm run build
-
       - name: Sync Capacitor Android
         run: |
           npx cap copy android
           npx cap sync android
-
       - name: Build APK
         working-directory: android
         run: |
@@ -53,7 +51,7 @@ jobs:
             export JAVA_HOME=$JAVA_HOME_17_X64
           fi
           chmod +x gradlew
-         ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug --stacktrace
 
       - uses: actions/upload-artifact@v4
         with:
