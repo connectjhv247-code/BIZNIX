@@ -65,13 +65,17 @@ export const Header: React.FC = () => {
             id="header-profile-btn"
             className="flex items-center gap-2.5 p-1 pl-1.5 pr-3 rounded-2xl bg-[#0F223D]/80 hover:bg-[#152B4D] border border-sky-500/20 hover:border-amber-400/50 transition-all cursor-pointer group"
           >
-            <div className="w-8 h-8 rounded-full bg-[#081220] border-2 border-amber-400 overflow-hidden ring-2 ring-amber-400/20 shadow-xs">
-              <img 
-                src={user.profile_image || 'https://api.dicebear.com/7.x/avataaars/svg?seed=Felix'} 
-                alt={user.name} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                referrerPolicy="no-referrer"
-              />
+            <div className="w-8 h-8 rounded-full bg-[#081220] border-2 border-amber-400 overflow-hidden ring-2 ring-amber-400/20 shadow-xs flex items-center justify-center text-amber-400 font-extrabold text-xs">
+              {user.profile_image ? (
+                <img 
+                  src={user.profile_image} 
+                  alt={user.name} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <span>{user.name ? user.name.charAt(0).toUpperCase() : 'U'}</span>
+              )}
             </div>
             <div className="hidden sm:block text-left">
               <p className="text-xs font-bold text-slate-100 leading-tight">

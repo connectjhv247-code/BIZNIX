@@ -27,16 +27,6 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
-// Curated avatar choices for registration
-const PRESET_AVATARS = [
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80',
-];
-
 const BUSINESS_CATEGORIES = [
   'Creative Design & Tech',
   'Marketing & Advertising',
@@ -70,7 +60,7 @@ export const WelcomeScreen: React.FC = () => {
   const [regPhone, setRegPhone] = useState('');
   const [regBusinessName, setRegBusinessName] = useState('');
   const [regCategory, setRegCategory] = useState(BUSINESS_CATEGORIES[0]);
-  const [regAvatar, setRegAvatar] = useState(PRESET_AVATARS[0]);
+  const [regAvatar, setRegAvatar] = useState('');
   const [showRegPassword, setShowRegPassword] = useState(false);
   const [isRegistering, setIsRegistering] = useState(false);
 
@@ -125,7 +115,7 @@ export const WelcomeScreen: React.FC = () => {
     setRegPhone('');
     setRegBusinessName('');
     setRegCategory(BUSINESS_CATEGORIES[0]);
-    setRegAvatar(PRESET_AVATARS[0]);
+    setRegAvatar('');
     setActiveModal('create_account');
   };
 
@@ -175,6 +165,8 @@ export const WelcomeScreen: React.FC = () => {
         msg = 'The email address format is invalid.';
       } else if (msg.includes('auth/weak-password')) {
         msg = 'Password is too weak. Please use at least 6 characters.';
+      } else if (msg.includes('auth/api-key-not-valid')) {
+        msg = 'Authentication configuration is being refreshed. Please try again.';
       }
       addToast(msg, 'error');
     } finally {
@@ -583,54 +575,41 @@ export const WelcomeScreen: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Avatar Selection */}
+                {/* Profile Picture Upload */}
                 <div>
                   <label className="block text-xs font-bold text-sky-300 uppercase tracking-wider mb-2">
-                    Executive Profile Avatar
+                    Profile Picture (Optional)
                   </label>
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden shrink-0 shadow-md">
-                      <img 
-                        src={regAvatar} 
-                        alt="Selected Avatar" 
-                        className="w-full h-full object-cover"
-                        referrerPolicy="no-referrer"
-                      />
+                    <div className="w-12 h-12 rounded-full border-2 border-amber-400/60 overflow-hidden shrink-0 shadow-md bg-[#0F223D] flex items-center justify-center text-amber-400 font-extrabold text-lg">
+                      {regAvatar ? (
+                        <img 
+                          src={regAvatar} 
+                          alt="Selected Avatar" 
+                          className="w-full h-full object-cover"
+                          referrerPolicy="no-referrer"
+                        />
+                      ) : (
+                        <span>{regName ? regName.charAt(0).toUpperCase() : 'U'}</span>
+                      )}
                     </div>
 
-                    {/* Presets */}
-                    <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
-                      {PRESET_AVATARS.map((av, idx) => (
-                        <button
-                          key={idx}
-                          type="button"
-                          onClick={() => setRegAvatar(av)}
-                          className={`w-9 h-9 rounded-full overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${
-                            regAvatar === av ? 'border-amber-400 scale-110 shadow-sm shadow-amber-400/50' : 'border-transparent opacity-60 hover:opacity-100'
-                          }`}
-                        >
-                          <img src={av} alt="Avatar option" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                        </button>
-                      ))}
-
-                      {/* Upload from Gallery Button */}
-                      <button
-                        type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        className="w-9 h-9 rounded-full bg-[#0F223D] border border-dashed border-amber-400/60 hover:border-amber-400 flex items-center justify-center text-amber-300 hover:text-white transition-colors cursor-pointer shrink-0"
-                        title="Upload photo from gallery"
-                      >
-                        <Camera className="w-4 h-4" />
-                      </button>
-                      <input 
-                        ref={fileInputRef} 
-                        type="file" 
-                        accept="image/*" 
-                        className="hidden" 
-                        onChange={handlePhotoUpload} 
-                      />
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="px-3.5 py-2 rounded-xl bg-[#0F223D] hover:bg-[#152B4D] border border-sky-500/30 text-sky-200 hover:text-white text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer"
+                    >
+                      <Camera className="w-4 h-4 text-amber-400" />
+                      <span>{regAvatar ? 'Change Photo' : 'Upload From Device'}</span>
+                    </button>
+                    <input 
+                      ref={fileInputRef} 
+                      type="file" 
+                      accept="image/*" 
+                      className="hidden" 
+                      onChange={handlePhotoUpload} 
+                    />
                   </div>
                 </div>
 

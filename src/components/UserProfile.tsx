@@ -27,16 +27,7 @@ import {
 import { useApp } from '../context/AppContext';
 import { api } from '../lib/api';
 
-// Curated executive business avatars
-const PRESET_AVATARS = [
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80',
-];
-
+// User Profile View
 export const UserProfileView: React.FC = () => {
   const { 
     user, 
@@ -67,7 +58,7 @@ export const UserProfileView: React.FC = () => {
     phone: user.phone || '',
     business_name: user.business_name || '',
     business_category: user.business_category || '',
-    profile_image: user.profile_image || PRESET_AVATARS[0]
+    profile_image: user.profile_image || ''
   });
 
   // Auth Forms State
@@ -113,7 +104,7 @@ export const UserProfileView: React.FC = () => {
       phone: user.phone || '',
       business_name: user.business_name || '',
       business_category: user.business_category || '',
-      profile_image: user.profile_image || PRESET_AVATARS[0]
+      profile_image: user.profile_image || ''
     });
     setActiveModal('edit_profile');
   };
@@ -263,15 +254,9 @@ export const UserProfileView: React.FC = () => {
 
           {/* Security & Commercial Guidance */}
           <div className="pt-4 border-t border-sky-900/40 text-left bg-[#081220]/60 p-4 rounded-2xl border border-sky-500/10">
-            <div className="flex items-start gap-3">
-              <Sparkles className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <div className="space-y-0.5">
-                <h4 className="text-xs font-bold text-white">Enterprise AI Business Studio</h4>
-                <p className="text-[11px] text-sky-300/60 leading-relaxed">
-                  Sign in with your registered account to securely load your saved brand designs, marketing flyers, and strategic business context.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs font-bold text-amber-400">
+              Power by Jaz media parustarta.
+            </p>
           </div>
         </div>
       ) : (
@@ -288,12 +273,18 @@ export const UserProfileView: React.FC = () => {
                 
                 {/* Profile Picture with Quick Gallery Change Overlay */}
                 <div className="relative group shrink-0">
-                  <img
-                    src={user.profile_image || PRESET_AVATARS[0]}
-                    alt={user.name}
-                    className="w-20 h-20 rounded-2xl object-cover ring-2 ring-amber-400/50 shadow-lg shadow-black/50"
-                    referrerPolicy="no-referrer"
-                  />
+                  {user.profile_image ? (
+                    <img
+                      src={user.profile_image}
+                      alt={user.name}
+                      className="w-20 h-20 rounded-2xl object-cover ring-2 ring-amber-400/50 shadow-lg shadow-black/50"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-20 h-20 rounded-2xl bg-amber-400/10 border-2 border-amber-400/50 flex items-center justify-center text-amber-400 font-display font-extrabold text-2xl shadow-lg shadow-black/50">
+                      {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                    </div>
+                  )}
                   <button
                     onClick={() => fileInputRef.current?.click()}
                     title="Select photo from gallery"
@@ -564,11 +555,8 @@ export const UserProfileView: React.FC = () => {
 
               {/* FAQ & Guidance */}
               <div className="p-4 rounded-2xl bg-[#081220] border border-amber-500/20">
-                <h4 className="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
-                  <HelpCircle className="w-3.5 h-3.5" /> BIZNIX Guidance & Commercial Rights
-                </h4>
-                <p className="text-[11px] text-sky-300/70 leading-relaxed">
-                  BIZNIX is purpose-built for enterprise brand creation, marketing campaigns, and growth. Powered by Jaz Media Parustarta. All exports are fully licensed for commercial usage.
+                <p className="text-xs font-bold text-amber-400">
+                  Power by Jaz media parustarta.
                 </p>
               </div>
 
@@ -611,18 +599,24 @@ export const UserProfileView: React.FC = () => {
               </div>
             </div>
 
-            {/* Profile Picture Gallery & Upload Selector */}
+            {/* Profile Picture Upload Selector */}
             <div className="p-4 rounded-2xl bg-[#081220] border border-sky-500/20 space-y-3">
               <label className="block text-[10px] font-extrabold uppercase text-sky-200 tracking-wider">
-                Profile Picture (Photo Gallery or Avatars)
+                Profile Picture
               </label>
 
               <div className="flex items-center gap-4">
-                <img
-                  src={formData.profile_image || PRESET_AVATARS[0]}
-                  alt="Avatar preview"
-                  className="w-16 h-16 rounded-2xl object-cover ring-2 ring-amber-400/60 shadow-md shrink-0"
-                />
+                {formData.profile_image ? (
+                  <img
+                    src={formData.profile_image}
+                    alt="Avatar preview"
+                    className="w-16 h-16 rounded-2xl object-cover ring-2 ring-amber-400/60 shadow-md shrink-0"
+                  />
+                ) : (
+                  <div className="w-16 h-16 rounded-2xl bg-amber-400/10 border border-amber-400/40 flex items-center justify-center text-amber-400 font-extrabold text-xl shrink-0">
+                    {formData.name ? formData.name.charAt(0).toUpperCase() : 'U'}
+                  </div>
+                )}
                 
                 <div className="space-y-1.5 flex-1">
                   <button
@@ -634,30 +628,6 @@ export const UserProfileView: React.FC = () => {
                     <span>Upload From Photo Gallery</span>
                   </button>
                   <p className="text-[10px] text-sky-300/60 text-center">Supports JPG, PNG, WEBP from your device</p>
-                </div>
-              </div>
-
-              {/* Preset Executive Avatars */}
-              <div>
-                <span className="text-[10px] font-semibold text-sky-300/70 block mb-1.5">Or choose an executive avatar:</span>
-                <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                  {PRESET_AVATARS.map((av, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => setFormData(prev => ({ ...prev, profile_image: av }))}
-                      className={`relative w-9 h-9 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
-                        formData.profile_image === av ? 'border-amber-400 ring-2 ring-amber-400/50 scale-105' : 'border-transparent opacity-70 hover:opacity-100'
-                      }`}
-                    >
-                      <img src={av} alt={`Avatar ${idx}`} className="w-full h-full object-cover" />
-                      {formData.profile_image === av && (
-                        <div className="absolute inset-0 bg-amber-500/30 flex items-center justify-center">
-                          <Check className="w-3 h-3 text-white stroke-[3]" />
-                        </div>
-                      )}
-                    </button>
-                  ))}
                 </div>
               </div>
             </div>
@@ -944,11 +914,17 @@ export const UserProfileView: React.FC = () => {
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#081220] border border-sky-500/20 flex items-center gap-3">
-              <img
-                src={user.profile_image || PRESET_AVATARS[0]}
-                alt={user.name}
-                className="w-11 h-11 rounded-xl object-cover ring-1 ring-amber-400/40 shrink-0"
-              />
+              {user.profile_image ? (
+                <img
+                  src={user.profile_image}
+                  alt={user.name}
+                  className="w-11 h-11 rounded-xl object-cover ring-1 ring-amber-400/40 shrink-0"
+                />
+              ) : (
+                <div className="w-11 h-11 rounded-xl bg-amber-400/10 border border-amber-400/40 flex items-center justify-center text-amber-400 font-extrabold text-base shrink-0">
+                  {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                </div>
+              )}
               <div className="overflow-hidden">
                 <p className="text-xs font-bold text-white truncate">{user.name}</p>
                 <p className="text-[11px] text-sky-300/60 truncate">{user.email}</p>
