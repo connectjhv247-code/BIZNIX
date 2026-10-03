@@ -15,11 +15,15 @@ jobs:
           distribution: temurin
           java-version: 17
       - name: Install deps
-        run: npm install
+        run: |
+          npm install
+          npm install @capacitor/android @capacitor/core @capacitor/cli --save
       - name: Build web
         run: npm run build
       - name: Sync Capacitor
         run: npx cap sync android
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
       - name: Build AAB
         working-directory: android
         run: ./gradlew bundleRelease
