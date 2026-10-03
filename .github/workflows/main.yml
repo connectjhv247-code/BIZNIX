@@ -20,6 +20,11 @@ jobs:
           npm install @capacitor/android @capacitor/core @capacitor/cli --save
       - name: Build web
         run: npm run build
+      - name: Add Android platform if missing
+        run: |
+          if [ ! -f "android/gradlew" ]; then
+            npx cap add android
+          fi
       - name: Sync Capacitor
         run: npx cap sync android
       - name: Make gradlew executable
